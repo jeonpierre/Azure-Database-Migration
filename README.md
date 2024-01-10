@@ -35,3 +35,11 @@ By restoring the AdventureWorks database from the provided backup file, you'll r
 Document your achievements in a comprehensive manner. Update the README file on the GitHub repository of this project with detailed information about the tasks accomplished in this milestone.
 
 Provide insights into the virtual machine setup, SQL Server installation, and the creation of the production database.
+
+# Milestone 3 
+
+3.1 Begin by creating an Azure SQL Database, which will serve as the target for migrating your on-premise database.
+
+Ensure that the associated SQL Server uses SQL login as the chosen authentication method. Additionally, confirm that the SQL Server has the appropriate firewall rules, specifically with your IP address added to the firewall settings.
+
+I created the Azure SQL Database, The SQL Database server and Connected it to VSCode with SQL Login Credentials. Whilst setting up firewall exemptions for my local IP. 
