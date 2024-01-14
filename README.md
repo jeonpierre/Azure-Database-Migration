@@ -40,6 +40,56 @@ Provide insights into the virtual machine setup, SQL Server installation, and th
 
 3.1 Begin by creating an Azure SQL Database, which will serve as the target for migrating your on-premise database.
 
+
 Ensure that the associated SQL Server uses SQL login as the chosen authentication method. Additionally, confirm that the SQL Server has the appropriate firewall rules, specifically with your IP address added to the firewall settings.
 
 I created the Azure SQL Database, The SQL Database server and Connected it to VSCode with SQL Login Credentials. Whilst setting up firewall exemptions for my local IP. 
+
+3.2 
+Prepared for Database migration - Install and configure Azure Data Studio on your production Windows VM. Use this tool to establish a connection to the existing on-premise database.
+
+3.3 
+Connected to Azure SQL Database - Using Azure Data Studio establish a connection to the newly created Azure SQL Database. This connection servers as the conduit for schema and data migration between the two databases.
+
+3.4 
+Shema Migration - After establishing connections to both databases, proceed to install the SQL Server Schema Compare extension within Azure Data Studio.
+
+Leverage this extension to compare and subsequently migrate the schema from the on-premise database to the Azure SQL Database.
+
+3.5 
+Data Migration - With the successful execution of the schema migration, you are now prepared to move forward with the data migration phase. Begin by installing the Azure SQL Migration extension within Azure Data Studio.
+
+This extension facilitates the smooth transfer of data from your on-premise database to the Azure SQL Database, ensuring a successful and seamless data migration process.
+
+
+3.6 
+Validate migration success - To confirm the success of the database migration process, carry out a comprehensive validation. Thoroughly inspect the data, schema, and any configurations of the migrated database, ensuring that the migration has been executed successfully and adheres to principles of data integrity.
+
+
+# Milestone 4 - Data backup and Restore
+
+4.1 
+Backup the on-premise database - Begin by generating a full backup of the production database hosted on the Windows VM. This backup essentially duplicates your database, providing a safety net in the event of unforeseen issues.
+
+Once the backup is complete, store the resultant backup file in a designated location on your computer.
+
+4.2 
+Upload the backup to blob storage- Start by configuring an Azure Blob Storage account, which will serve as a secure online repository for your database backups.
+
+Next, upload the previously created database backup file to the Blob Storage container. This step provides an extra layer of backup protection through the presence of a redundant copy stored remotely.
+
+4.3
+
+4.4 
+
+# Milestone 5 - Disaster Recovery Simulation 
+
+
+
+# Milestone 6 - Georeplication and Failover
+
+
+
+# Milestone 7 - Microsoft Entra Directory Integration
+
+
