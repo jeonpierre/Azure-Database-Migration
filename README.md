@@ -78,7 +78,13 @@ Upload the backup to blob storage- Start by configuring an Azure Blob Storage ac
 
 Next, upload the previously created database backup file to the Blob Storage container. This step provides an extra layer of backup protection through the presence of a redundant copy stored remotely.
 
-4.3
+4.3 
+Restore Database on Development Enviroment-
+Think of the development environment as an area for controlled experimentation, much like a sandbox. In software development, a sandbox is a controlled and isolated environment where applications and software can be tested, developed, and experimented with, all without impacting the production systems.
+
+To replicate this environment, provision a new Windows VM that mirrors the development setup. Install SQL Server on this VM to mimic the necessary database infrastructure.
+
+Subsequently, proceed to restore the database backup onto this new "sandbox" environment. This allows you to safely explore and experiment with new concepts, while your main production data remains unaffected.
 
 4.4 
 
