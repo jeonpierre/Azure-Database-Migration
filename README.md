@@ -87,9 +87,20 @@ To replicate this environment, provision a new Windows VM that mirrors the devel
 Subsequently, proceed to restore the database backup onto this new "sandbox" environment. This allows you to safely explore and experiment with new concepts, while your main production data remains unaffected.
 
 4.4 
+Automate Backups for Development Database- 
+On your development Windows VM, utilize SSMS to establish a Management Task that automates regular backups of your development database.
+
+Configure a weekly backup schedule to ensure consistent protection for your evolving work and simplify recovery for your development environment if needed.
 
 # Milestone 5 - Disaster Recovery Simulation 
+5.1 
+Mimic Data Loss In Production Enviroment- 
+Deliberately remove critical data from your production database to replicate a scenario where data integrity is compromised. You have the flexibility to choose which data to remove, but ensure that you document this simulated data loss meticulously. This documentation will serve as a blueprint for your recovery testing.
 
+After completing the simulation, confirm its success by examining the Azure SQL Database using the connection already established in Azure Data Studio.
+
+5.2 
+Restore Database from Azure SQL Database Backup- 
 
 
 # Milestone 6 - Georeplication and Failover
