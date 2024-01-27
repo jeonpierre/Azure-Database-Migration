@@ -2,7 +2,21 @@
 
 See Azure Project PDF in Repo for UML Diagram of Build Architecture. 
 
+In this project, I architected and implemented a cloud-based database system on Microsoft Azure, showcasing my hands-on expertise in cloud engineering.
+
+I began by establishing a production environment database. Subsequently, I migrated the database to Azure SQL Database, focusing on crucial aspects like data backup, restoration, and automated scheduling. These efforts strengthened my data management approach.
+
+A pivotal phase of the project involved simulating a disaster recovery scenario with potential data loss. Furthermore, I explored the complexities of geo-replication and failover configuration to ensure data availability even under challenging conditions.
+
+To enhance security, I employed Microsoft Entra ID integration to define access roles like read only, adding an extra layer of control and protection.
+
+
+I approached and completed this project with different milestones and maintaining the practice of continually updating my GitHub README documentation with my recent tasks. 
+
+
 # Milestone 1 - Set up the Enviroment 
+
+First I Set up an Azure account 
 
 
 # Milestone 2 - Set up the Production Enviroment 
