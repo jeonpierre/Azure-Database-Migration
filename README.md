@@ -132,11 +132,31 @@ Then deleted the dataloss server in the azure portal
 Confirgure a Georeplication for Production Database. 
 
 6.1 - Setup Geo Replication in Azure SQL Database 
+Begin by setting up geo-replication for your production Azure SQL Database. This process involves creating a synchronized replica of your primary database.
+
+This replica will reside on a separate SQL server located in a different geographical region from your primary database server. This geographical separation is crucial as it bolsters redundancy and resilience, minimizing shared risks.
 
 6.2 - Test Failover and Failback 
+Simulate real-world challenges by orchestrating a planned failover to the secondary region. This act transitions operations to the secondary copy. Evaluate the availability and data consistency of the failover database.
+
+Afterward, perform a failback to the primary region, demonstrating the cyclical nature of your failover strategy.
 
 
 
 # Milestone 7 - Microsoft Entra Directory Integration
+
+7.1 Confirgure Microsoft Entra ID for Azure SQL Database
+Begin by enabling Microsoft Entra ID authentication for the SQL Server that hosts your Azure SQL production database. This steps integrates Microsoft Entra ID as a trusted identity provider, allowing users to authenticating using their Microsoft Entra credentials.
+
+Subsequently, choose an Microsoft Entra admin who holds privileged permissions within your Azure SQL Database environment. This admin will have authority over user management and access control. Ensure that you can establish a connection to the production database using Microsoft Entra credentials within Azure Data Studio.
+
+7.2 - Create Database Reader User 
+Begin by generating a new user account in Microsoft Entra ID, which will serve as your DB Reader user.
+
+In Azure Data Studio, ensure that you're connected to the production database using the Microsoft Entra admin credentials. Proceed to assign the db_datareader role to the previously created DB Reader User. This role provides the user with read-only privileges.
+
+Reconnect to your production database using Azure Data Studio and the credentials of the new DB Reader AD user. Test out the permissions of the user to ensure the correct role has been assigned to this user.
+
+
 
 
