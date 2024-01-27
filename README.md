@@ -1,6 +1,6 @@
 # Azure Database Migration 
 
-
+See UML Diagram for Build Architecture. 
 
 # Milestone 1 - Set up the Enviroment 
 
