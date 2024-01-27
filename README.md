@@ -102,8 +102,38 @@ After completing the simulation, confirm its success by examining the Azure SQL 
 5.2 
 Restore Database from Azure SQL Database Backup- 
 
+Deleted first 100 Rows for: 
+
+Person.Address Table 
+
+Corrputed 100 Rows: Person.Password Table 
+
+DELETE TOP (100)
+FROM Person.Address;
+
+UPDATE TOP (100) Person.Password
+SET PasswordHash = 0 ‘
+
+Checked Dataloss:
+
+Verified by inspecting tables 
+
+Databasejeanvil production vm 
+
+Restored through azure portal 
+
+restored to 1 hr prior 
+
+New Database name = -restoreddatabasejeanvil
+
+Then deleted the dataloss server in the azure portal
 
 # Milestone 6 - Georeplication and Failover
+Confirgure a Georeplication for Production Database. 
+
+6.1 - Setup Geo Replication in Azure SQL Database 
+
+6.2 - Test Failover and Failback 
 
 
 
