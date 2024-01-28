@@ -16,7 +16,7 @@ I approached and completed this project with different milestones and maintainin
 
 # Milestone 1 - Set up the Enviroment 
 
-First I Set up an Azure account 
+First I Set up an Azure account and Decided on the Database I would be using to initiate this project. This was the infamous AdventureWorks2022.bak file. This became my projects dataset. 
 
 
 # Milestone 2 - Set up the Production Enviroment 
@@ -33,7 +33,7 @@ I configured the appropriate network settings and firewall rules to establish a 
 
 2.3 I installed SQL Server and SQL Server Management Studio (SSMS) on the VM, essential tools for proficient database management within our production environment, mimicking the capabilities of a corporate database server.
 
-2.4 I created the production database by restoring it from a backup file, corresponding to the renowned Microsoft SQL Server database known as AdventureWorks.
+2.4 I created the production database by restoring it from a backup file (Adventureworks2022.bak), corresponding to the renowned Microsoft SQL Server database known as AdventureWorks.
 
 By restoring the AdventureWorks database from the provided backup file, I replicated an authentic production database scenario.
 
