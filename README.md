@@ -20,100 +20,59 @@ First I Set up an Azure account
 
 
 # Milestone 2 - Set up the Production Enviroment 
-Provision a Windows VM, Install SQL Server and Server Managment Studio on the W VM in order to effectively manage and interact with the database. 
 
-2.1 Set up a Windows Virtual Machine (VM) to serve as the cornerstone of your production environment. This VM will emulate the functions of a Windows server, replicating the operations of an on-premise system within a company.
+I provisioned a Windows VM and installed SQL Server and Server Management Studio on the VM to effectively manage and interact with the database.
 
-Throughout the course of this project, the VM will act as a repository for the company's database. This setup effectively simulates a secure and dedicated data storage solution.
+2.1 I set up a Windows Virtual Machine (VM) to serve as the cornerstone of our production environment, emulating the functions of a Windows server.
 
-Ensure that you configure the appropriate network settings and firewall rules. This configuration will enable you to establish a connection to the VM using the RDP protocol.
+Throughout the course of this project, the VM acted as a repository for our company's database, providing a secure and dedicated data storage solution.
 
-2.2 
-After provisioning the VM, the next step is to initiate a remote connect to it. Use the RDP protocol and Microsoft Remote Desktop to establish a secure connection to the VM.
+I configured the appropriate network settings and firewall rules to establish a connection to the VM using the RDP protocol.
 
-This connection will provide you with direct access to the VM's operating system, facilitating efficient management and configuration.
+2.2 After provisioning the VM, I initiated a remote connection to it using the RDP protocol and Microsoft Remote Desktop, facilitating efficient management and configuration.
 
+2.3 I installed SQL Server and SQL Server Management Studio (SSMS) on the VM, essential tools for proficient database management within our production environment, mimicking the capabilities of a corporate database server.
 
-2.3 
-Install SQL Server and SQL Server Management Studio (SSMS) on the VM. These tools are essential for proficient database management within your production environment, mirroring the capabilities of a corporate database server.
+2.4 I created the production database by restoring it from a backup file, corresponding to the renowned Microsoft SQL Server database known as AdventureWorks.
 
-2.4
-Create the production database by restoring it from this backup file
+By restoring the AdventureWorks database from the provided backup file, I replicated an authentic production database scenario.
 
-. The backup file corresponds to the renowned Microsoft SQL Server database known as AdventureWorks. This database is an illustrative and comprehensive sample database that emulates a fictional manufacturing company's operations. It encompasses various tables, views, stored procedures, and data, offering a rich and diverse dataset.
-
-By restoring the AdventureWorks database from the provided backup file, you'll replicate an authentic production database scenario.
-
-
-2.5
-Document your achievements in a comprehensive manner. Update the README file on the GitHub repository of this project with detailed information about the tasks accomplished in this milestone.
-
-Provide insights into the virtual machine setup, SQL Server installation, and the creation of the production database.
+2.5 I documented my achievements comprehensively, updating the README file on the GitHub repository of this project with detailed information about the tasks accomplished in this milestone.Provision a Windows VM, Install SQL Server and Server Managment Studio on the W VM in order to effectively manage and interact with the database. 
 
 # Milestone 3 
 
-3.1 Begin by creating an Azure SQL Database, which will serve as the target for migrating your on-premise database.
+3.1 I began by creating an Azure SQL Database, serving as the target for migrating our on-premise database.
 
+I ensured that the associated SQL Server used SQL login as the chosen authentication method and configured the appropriate firewall rules.
 
-Ensure that the associated SQL Server uses SQL login as the chosen authentication method. Additionally, confirm that the SQL Server has the appropriate firewall rules, specifically with your IP address added to the firewall settings.
+I created the Azure SQL Database, the SQL Database server, and connected it to VSCode with SQL Login Credentials, setting up firewall exemptions for my local IP.
 
-I created the Azure SQL Database, The SQL Database server and Connected it to VSCode with SQL Login Credentials. Whilst setting up firewall exemptions for my local IP. 
+3.2 I prepared for database migration by installing and configuring Azure Data Studio on our production Windows VM, using this tool to establish a connection to the existing on-premise database.
 
-3.2 
-Prepared for Database migration - Install and configure Azure Data Studio on your production Windows VM. Use this tool to establish a connection to the existing on-premise database.
+3.3 Using Azure Data Studio, I connected to the newly created Azure SQL Database, establishing a conduit for schema and data migration between the two databases.
 
-3.3 
-Connected to Azure SQL Database - Using Azure Data Studio establish a connection to the newly created Azure SQL Database. This connection servers as the conduit for schema and data migration between the two databases.
+3.4 I installed the SQL Server Schema Compare extension within Azure Data Studio to compare and subsequently migrate the schema from the on-premise database to the Azure SQL Database.
 
-3.4 
-Shema Migration - After establishing connections to both databases, proceed to install the SQL Server Schema Compare extension within Azure Data Studio.
+3.5 With the successful execution of the schema migration, I proceeded to install the Azure SQL Migration extension within Azure Data Studio to facilitate the smooth transfer of data from our on-premise database to the Azure SQL Database.
 
-Leverage this extension to compare and subsequently migrate the schema from the on-premise database to the Azure SQL Database.
-
-3.5 
-Data Migration - With the successful execution of the schema migration, you are now prepared to move forward with the data migration phase. Begin by installing the Azure SQL Migration extension within Azure Data Studio.
-
-This extension facilitates the smooth transfer of data from your on-premise database to the Azure SQL Database, ensuring a successful and seamless data migration process.
-
-
-3.6 
-Validate migration success - To confirm the success of the database migration process, carry out a comprehensive validation. Thoroughly inspect the data, schema, and any configurations of the migrated database, ensuring that the migration has been executed successfully and adheres to principles of data integrity.
-
+3.6 I validated the migration success by thoroughly inspecting the data, schema, and configurations of the migrated database, ensuring a successful and seamless data migration process.
 
 # Milestone 4 - Data backup and Restore
 
-4.1 
-Backup the on-premise database - Begin by generating a full backup of the production database hosted on the Windows VM. This backup essentially duplicates your database, providing a safety net in the event of unforeseen issues.
+4.1 I backed up the on-premise database by generating a full backup of the production database hosted on the Windows VM, storing the resultant backup file in a designated location on my computer.
 
-Once the backup is complete, store the resultant backup file in a designated location on your computer.
+4.2 I uploaded the backup to blob storage by configuring an Azure Blob Storage account, serving as a secure online repository for our database backups, and uploading the previously created database backup file to the Blob Storage container.
 
-4.2 
-Upload the backup to blob storage- Start by configuring an Azure Blob Storage account, which will serve as a secure online repository for your database backups.
+4.3 I restored the database on the development environment, provisioning a new Windows VM, installing SQL Server on this VM, and restoring the database backup onto this new "sandbox" environment.
 
-Next, upload the previously created database backup file to the Blob Storage container. This step provides an extra layer of backup protection through the presence of a redundant copy stored remotely.
-
-4.3 
-Restore Database on Development Enviroment-
-Think of the development environment as an area for controlled experimentation, much like a sandbox. In software development, a sandbox is a controlled and isolated environment where applications and software can be tested, developed, and experimented with, all without impacting the production systems.
-
-To replicate this environment, provision a new Windows VM that mirrors the development setup. Install SQL Server on this VM to mimic the necessary database infrastructure.
-
-Subsequently, proceed to restore the database backup onto this new "sandbox" environment. This allows you to safely explore and experiment with new concepts, while your main production data remains unaffected.
-
-4.4 
-Automate Backups for Development Database- 
-On your development Windows VM, utilize SSMS to establish a Management Task that automates regular backups of your development database.
-
-Configure a weekly backup schedule to ensure consistent protection for your evolving work and simplify recovery for your development environment if needed.
+4.4 On the development Windows VM, I utilized SSMS to establish a Management Task that automated regular backups of our development database, configuring a weekly backup schedule.
 
 # Milestone 5 - Disaster Recovery Simulation 
-5.1 
-Mimic Data Loss In Production Enviroment- 
-Deliberately remove critical data from your production database to replicate a scenario where data integrity is compromised. You have the flexibility to choose which data to remove, but ensure that you document this simulated data loss meticulously. This documentation will serve as a blueprint for your recovery testing.
+5.1 I mimicked data loss in the production environment by deliberately removing critical data from our production database, meticulously documenting this simulated data loss and confirming its success by examining the Azure SQL Database using the connection already established in Azure Data Studio.
 
-After completing the simulation, confirm its success by examining the Azure SQL Database using the connection already established in Azure Data Studio.
+5.2 I restored the database from the Azure SQL Database backup, conducting tests and verifying the restoration process to ensure data integrity.
 
-5.2 
+Procedure as Follows:
 Restore Database from Azure SQL Database Backup- 
 
 Deleted first 100 Rows for: 
@@ -136,7 +95,7 @@ Databasejeanvil production vm
 
 Restored through azure portal 
 
-restored to 1 hr prior 
+I then restored tbe production database to a period pre-data loss/disaster. In this case 1 hr prior.
 
 New Database name = -restoreddatabasejeanvil
 
@@ -145,31 +104,16 @@ Then deleted the dataloss server in the azure portal
 # Milestone 6 - Georeplication and Failover
 Confirgure a Georeplication for Production Database. 
 
-6.1 - Setup Geo Replication in Azure SQL Database 
-Begin by setting up geo-replication for your production Azure SQL Database. This process involves creating a synchronized replica of your primary database.
+6.1 I set up geo-replication for our production Azure SQL Database, creating a synchronized replica of our primary database in a separate SQL server located in a different geographical region.
 
-This replica will reside on a separate SQL server located in a different geographical region from your primary database server. This geographical separation is crucial as it bolsters redundancy and resilience, minimizing shared risks.
-
-6.2 - Test Failover and Failback 
-Simulate real-world challenges by orchestrating a planned failover to the secondary region. This act transitions operations to the secondary copy. Evaluate the availability and data consistency of the failover database.
-
-Afterward, perform a failback to the primary region, demonstrating the cyclical nature of your failover strategy.
-
-
+6.2 I tested failover and failback procedures, simulating real-world challenges by orchestrating a planned failover to the secondary region and evaluating the availability and data consistency of the failover database.
 
 # Milestone 7 - Microsoft Entra Directory Integration
 
-7.1 Confirgure Microsoft Entra ID for Azure SQL Database
-Begin by enabling Microsoft Entra ID authentication for the SQL Server that hosts your Azure SQL production database. This steps integrates Microsoft Entra ID as a trusted identity provider, allowing users to authenticating using their Microsoft Entra credentials.
+7.1 I configured Microsoft Entra ID authentication for the SQL Server hosting our Azure SQL production database, integrating Microsoft Entra ID as a trusted identity provider and establishing an Microsoft Entra admin with authority over user management and access control.
 
-Subsequently, choose an Microsoft Entra admin who holds privileged permissions within your Azure SQL Database environment. This admin will have authority over user management and access control. Ensure that you can establish a connection to the production database using Microsoft Entra credentials within Azure Data Studio.
+7.2 I created a database reader user, generating a new user account in Microsoft Entra ID and assigning the db_datareader role to the user for read-only privileges, ensuring correct role assignment for user permissions.
 
-7.2 - Create Database Reader User 
-Begin by generating a new user account in Microsoft Entra ID, which will serve as your DB Reader user.
-
-In Azure Data Studio, ensure that you're connected to the production database using the Microsoft Entra admin credentials. Proceed to assign the db_datareader role to the previously created DB Reader User. This role provides the user with read-only privileges.
-
-Reconnect to your production database using Azure Data Studio and the credentials of the new DB Reader AD user. Test out the permissions of the user to ensure the correct role has been assigned to this user.
 
 
 
